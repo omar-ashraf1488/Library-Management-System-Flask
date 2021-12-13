@@ -1,0 +1,14 @@
+<!--This file is basically the skeleton of every web page in the app-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"> <!-- jinja2 syntax! Here to link the css file-->
+    {% block head %} {% endblock %} <!-- jinja2 syntax. This will be used to insert code on all other pages, which inherit this template-->
+</head>
+<body>
+    {% block body %} {% endblock %}
+</body>
+</html>
