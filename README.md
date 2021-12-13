@@ -21,7 +21,6 @@ This project is a Web application for Library Management System and It is connec
 ### <a name="built_with"></a>Built With
 * Python 3
 * Flask
-* Jinja2
 * SQL
 * IDE: Visual Studio Code
 
@@ -33,6 +32,7 @@ This project is a Web application for Library Management System and It is connec
 
 ## <a name="roadmap_"></a>Roadmap
 - [ ] Home Page
+- [ ] Two Language: English and German
 - [ ] Add User and User Admin
 - [ ] Add books with their details, delete, borrow, buy, return books
 - [ ] Docker Image for the Application
