@@ -13,7 +13,7 @@ const App = () => {
           <Route path="/" />
         </Routes>
       </Router>
-      <Header/>
+     
     </Fragment>
   );
 };
