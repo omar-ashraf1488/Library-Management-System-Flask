@@ -1,5 +1,5 @@
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    background: linear-gradient(90deg, rgb(28, 28, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     height: 80px;
-    max-width: 1500px;
+    max-width: 1500px; 
   }
   
   .navbar-logo {
@@ -28,10 +28,11 @@
     display: flex;
     align-items: center;
   }
-  
-  .fa-typo3 {
+
+  .fa-book-open {
     margin-left: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    margin-right: 2rem;
   }
   
   .nav-menu {
