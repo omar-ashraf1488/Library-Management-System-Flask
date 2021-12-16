@@ -26,6 +26,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo nav">
+          <i class="fas fa-book-open"></i>
             Library
           </Link>
           <div className="menu-icon" onClick={handleClick}>
