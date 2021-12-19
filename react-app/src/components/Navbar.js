@@ -8,7 +8,7 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
+  const handleClick = () => {setClick(!click)};
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
@@ -26,7 +26,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo nav">
-          <i class="fas fa-book-open"></i>
+          <i className="fas fa-book-open"></i>
             Library
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -69,7 +69,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>Sign Up</Button>}
+          <Button className="lg" buttonStyle='btn--outline'>Sign Up</Button>
         </div>
       </nav>
     </Fragment>
