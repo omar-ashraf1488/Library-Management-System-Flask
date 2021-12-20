@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 
@@ -25,10 +25,10 @@ function Navbar() {
     <Fragment>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo nav">
+          <NavLink to="/" className="navbar-logo nav" onClick={closeMobileMenu}>
           <i className="fas fa-book-open"></i>
             Library
-          </Link>
+          </NavLink>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
@@ -41,7 +41,7 @@ function Navbar() {
 
             <li className="nav-item">
               <Link
-                to="/option1"
+                to="/books"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -51,7 +51,7 @@ function Navbar() {
 
             <li className="nav-item">
               <Link
-                to="/option2"
+                to="/services"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -72,6 +72,7 @@ function Navbar() {
           <Button className="lg" buttonStyle='btn--outline'>Sign Up</Button>
         </div>
       </nav>
+      
     </Fragment>
   );
 }
