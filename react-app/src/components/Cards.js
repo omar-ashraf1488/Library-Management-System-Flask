@@ -10,14 +10,14 @@ function Cards() {
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem
-              src="images/book2.jpg"
+              src="images/book1.jpg"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
               label="Best Seller"
               path="/book2"
             />
 
             <CardItem
-              src="images/book1.jpg"
+              src="images/book2.jpg"
               text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
               label="New"
               path="/book1"
@@ -33,7 +33,7 @@ function Cards() {
             />
 
             <CardItem
-              src="images/book1.jpg"
+              src="images/book4.jpg"
               text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
               label="Best Seller"
               path="/book4"
