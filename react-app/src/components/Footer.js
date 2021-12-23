@@ -65,7 +65,7 @@ function Footer() {
               Library <i className="fas fa-book-open"></i>
             </Link>
           </div>
-          <small className="website-rights">Library</small>
+
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"
@@ -108,6 +108,16 @@ function Footer() {
               <i className="fab fa-linkedin"></i>
             </Link>
           </div>
+        </div>
+      </section>
+      <div class="line"></div>
+      <section className="website-rights-pay">
+        <div className="website-rights">Copyright © 2022 Library</div>
+        <div className="pay-methods">
+          <i className="social-icon-link fab fa-cc-paypal"></i>
+          <i className="social-icon-link fab fa-cc-visa"></i>
+          <i className="social-icon-link fab fa-cc-mastercard"></i>
+          <i className="social-icon-link fab fa-google-play"></i>
         </div>
       </section>
     </div>
