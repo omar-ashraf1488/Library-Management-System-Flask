@@ -1,4 +1,4 @@
-.navbar {
+.navbar-custom {
     background: linear-gradient(90deg, rgb(28, 28, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
     display: flex;
@@ -29,11 +29,13 @@
     align-items: center;
   }
 
+  /*
   .fa-book-open {
     margin-left: 0.5rem;
     font-size: 2.5rem;
     margin-right: 2rem;
   }
+  */
   
   .nav-menu {
     display: grid;
