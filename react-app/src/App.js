@@ -5,12 +5,14 @@ import Home from "./components/pages/Home";
 import Navbar from "./components/Navbar";
 import Books from "./components/pages/Books";
 import SignUp from "./components/pages/SignUp";
+import MainNavbar from "./components/navbar/MainNavbar";
 
 const App = () => {
   return (
     <Fragment>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
+        <MainNavbar/>
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/books" element={<Books/>} />
