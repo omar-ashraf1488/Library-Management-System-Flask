@@ -29,11 +29,13 @@
     align-items: center;
   }
 
+  /*
   .fa-book-open {
     margin-left: 0.5rem;
     font-size: 2.5rem;
     margin-right: 2rem;
   }
+  */
   
   .nav-menu {
     display: grid;
