@@ -28,6 +28,7 @@ This project is a Web application for Library Management System and It is connec
 * Flask
 * ReactJS
 * SQL
+* Bootstrap
 * IDE: Visual Studio Code
 
 ## <a name="getting_started"></a>Getting Started
