@@ -1,12 +1,11 @@
 import React, { useState, Fragment } from "react";
 import { Button } from "./Button";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
 
   const handleClick = () => {setClick(!click)};
   const closeMobileMenu = () => setClick(false);

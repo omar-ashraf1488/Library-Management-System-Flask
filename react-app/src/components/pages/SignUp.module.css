@@ -1,0 +1,10 @@
+.signUpSection {
+    height: calc(100vh - 87.13px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer {
+
+}
