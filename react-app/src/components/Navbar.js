@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <Fragment>
-      <nav className="navbar">
+      <nav className="navbar-custom">
         <div className="navbar-container">
           <NavLink to="/" className="navbar-logo nav" onClick={closeMobileMenu}>
           <i className="fas fa-book-open"></i>
