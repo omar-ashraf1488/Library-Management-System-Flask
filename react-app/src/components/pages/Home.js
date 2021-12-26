@@ -2,7 +2,6 @@ import React from 'react'
 import { Fragment } from 'react'
 
 import CarouselCustom from '../CarouselCustom'
-import '../../App.css'
 import Cards from '../Cards';
 import Footer from '../Footer';
 

@@ -1,25 +1,23 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Home from "./components/pages/Home";
-import Navbar from "./components/Navbar";
-import Books from "./components/pages/Books";
-import SignUp from "./components/pages/SignUp";
+import { Routes, Route } from "react-router-dom";
+
 import MainNavbar from "./components/navbar/MainNavbar";
+import Home from "./components/pages/Home";
+import Books from "./components/pages/Books";
+
+import "./App.css";
 
 const App = () => {
   return (
     <Fragment>
-      <Router>
-        {/* <Navbar /> */}
-        <MainNavbar/>
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="/books" element={<Books/>} />
-          <Route path="/sign-up" element={<SignUp/>} />
-        </Routes>
-      </Router>
-      
+      <MainNavbar />
+      <Routes>
+        <Route index exact element={<Home />} />
+        <Route path="books" element={<Books />}>
+          <Route path=":bookId" />
+          <Route path="new" />
+        </Route>
+      </Routes>
     </Fragment>
   );
 };

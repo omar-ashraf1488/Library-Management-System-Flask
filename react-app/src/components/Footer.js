@@ -111,7 +111,7 @@ function Footer() {
           </div>
         </div>
       </section>
-      <div class="line"></div>
+      <div className="line"></div>
       <section className="website-rights-pay">
         <div className="website-rights">Copyright © 2022 Library</div>
         <div className="pay-methods">

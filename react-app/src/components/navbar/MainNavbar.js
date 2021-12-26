@@ -1,15 +1,7 @@
 import React, { Fragment } from "react";
-import { Link, NavLink } from "react-router-dom";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-  Glyphicon,
-} from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 function MainNavbar() {
   return (
@@ -18,8 +10,8 @@ function MainNavbar() {
         <Container fluid className="d-flex">
           <div className="p-2">
             <Navbar.Brand className="d-flex align-items-center" href="/">
-              <i className="fas fa-book-open fa-2x"></i>
-              Library
+              <i className="fas fa-book-open fa-2x me-2"></i>
+              <span>Library</span>
             </Navbar.Brand>
           </div>
           <div className="p-2">
@@ -30,17 +22,27 @@ function MainNavbar() {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Books</Nav.Link>
-                <Nav.Link href="#">Services</Nav.Link>
-                <Nav.Link href="sign-up">
-                  <i class="m-1 fas fa-user"></i> 
-                  Sign Up
-                </Nav.Link>
-                <Nav.Link href="log-in">
-                  <i class="m-1 fas fa-sign-in-alt"></i>
-                 Login
-                </Nav.Link>
+                <LinkContainer to="/">
+                  <Nav.Link>Home</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/books">
+                  <Nav.Link>Books</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/services">
+                  <Nav.Link>Services</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/sign-up">
+                  <Nav.Link>
+                    <i className="me-1 fas fa-user"></i>
+                    <span>Sign Up</span>
+                  </Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/log-in">
+                  <Nav.Link>
+                    <i className="me-1 fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                  </Nav.Link>
+                </LinkContainer>
               </Nav>
             </Navbar.Collapse>
           </div>
