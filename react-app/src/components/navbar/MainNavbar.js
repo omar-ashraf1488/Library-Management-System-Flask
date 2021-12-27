@@ -9,10 +9,12 @@ function MainNavbar() {
       <Navbar bg="dark" variant="dark" sticky="top" expand="lg">
         <Container fluid className="d-flex">
           <div className="p-2">
-            <Navbar.Brand className="d-flex align-items-center" href="/">
-              <i className="fas fa-book-open fa-2x me-2"></i>
-              <span>Library</span>
-            </Navbar.Brand>
+            <LinkContainer to="/">
+              <Navbar.Brand className="d-flex align-items-center">
+                <i className="fas fa-book-open fa-2x me-2"></i>
+                <span>Library</span>
+              </Navbar.Brand>
+            </LinkContainer>
           </div>
           <div className="p-2">
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -37,7 +39,7 @@ function MainNavbar() {
                     <span>Sign Up</span>
                   </Nav.Link>
                 </LinkContainer>
-                <LinkContainer to="/log-in">
+                <LinkContainer to="/sign-in">
                   <Nav.Link>
                     <i className="me-1 fas fa-sign-in-alt"></i>
                     <span>Login</span>
