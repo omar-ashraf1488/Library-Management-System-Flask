@@ -4,6 +4,7 @@ import './index.css';
 
 import App from './App';
 import SignUp from "./components/pages/SignUp";
+import SignIn from "./components/pages/SignIn";
 
 import {
   BrowserRouter,
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/sign-in" element={<SignIn />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

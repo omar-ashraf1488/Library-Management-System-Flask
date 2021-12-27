@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import classes from "./SignUp.module.css";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 
+
 function SignUp() {
   const formHandler = (e) => {
     e.preventDefault();
