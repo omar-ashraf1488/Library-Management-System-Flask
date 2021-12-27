@@ -38,8 +38,7 @@ This project is a Web application for Library Management System and It is connec
 ### <a name="installation_"></a>Installation
 
 ## <a name="roadmap_"></a>Roadmap
-- [x] Home Page
-- [x] Sign Up Page
+- [x] Home Page, Sign Up Page, Sign In Page
 - [ ] Two Language: English and German
 - [ ] Add User and User Admin
 - [ ] Add books with their details, delete, borrow, buy, return books
