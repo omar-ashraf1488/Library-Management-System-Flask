@@ -18,7 +18,7 @@
 This project is a Web application for Library Management System and It is connected to Database. The main aim of the project is learning Python, Flask, ReactJS and SQL.
 
 <p align="center">
-  <img width="700" <img src="current app/app21.12.gif"/>
+  <img width="700" <img src="current app/26.12.gif"/>
   <h3 align="center">The current Image of the Application</h3>
 </p>
 
@@ -38,7 +38,7 @@ This project is a Web application for Library Management System and It is connec
 ### <a name="installation_"></a>Installation
 
 ## <a name="roadmap_"></a>Roadmap
-- [ ] Home Page
+- [x] Home Page, Sign Up Page, Sign In Page
 - [ ] Two Language: English and German
 - [ ] Add User and User Admin
 - [ ] Add books with their details, delete, borrow, buy, return books
