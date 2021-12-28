@@ -6,48 +6,38 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 function MainNavbar() {
   return (
     <Fragment>
-      <Navbar bg="dark" variant="dark" sticky="top" expand="lg">
-        <Container fluid className="d-flex">
-          <div className="p-2">
-            <LinkContainer to="/">
-              <Navbar.Brand className="d-flex align-items-center">
-                <i className="fas fa-book-open fa-2x me-2"></i>
-                <span>Library</span>
-              </Navbar.Brand>
-            </LinkContainer>
-          </div>
-          <div className="p-2">
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="d-flex align-items-center"
-                style={{ maxHeight: "100px" }}
-                navbarScroll
-              >
-                <LinkContainer to="/">
-                  <Nav.Link>Home</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/books">
-                  <Nav.Link>Books</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/services">
-                  <Nav.Link>Services</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/sign-up">
-                  <Nav.Link>
-                    <i className="me-1 fas fa-user"></i>
-                    <span>Sign Up</span>
-                  </Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/sign-in">
-                  <Nav.Link>
-                    <i className="me-1 fas fa-sign-in-alt"></i>
-                    <span>Login</span>
-                  </Nav.Link>
-                </LinkContainer>
-              </Nav>
-            </Navbar.Collapse>
-          </div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+        <Container>
+          <Navbar.Brand className="d-flex align-items-center">
+            <i className="fas fa-book-open fa-2x me-2"></i>
+            <span>Library</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto">
+              <LinkContainer to="/">
+                <Nav.Link>Home</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/books">
+                <Nav.Link>Books</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/services">
+                <Nav.Link>Services</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/sign-up">
+                <Nav.Link>
+                  <i className="me-1 fas fa-user"></i>
+                  <span>Sign Up</span>
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/sign-in">
+                <Nav.Link>
+                  <i className="me-1 fas fa-sign-in-alt"></i>
+                  <span>Login</span>
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </Fragment>
