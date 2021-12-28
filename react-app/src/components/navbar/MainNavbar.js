@@ -8,10 +8,12 @@ function MainNavbar() {
     <Fragment>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
         <Container>
-          <Navbar.Brand className="d-flex align-items-center">
-            <i className="fas fa-book-open fa-2x me-2"></i>
-            <span>Library</span>
-          </Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand className="d-flex align-items-center">
+              <i className="fas fa-book-open fa-2x me-2"></i>
+              <span>Library</span>
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
