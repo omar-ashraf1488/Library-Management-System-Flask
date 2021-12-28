@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Form, Col, Button, Card } from "react-bootstrap";
+import { Form, Col, Button, Card, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Nav } from "react-bootstrap";
 
@@ -16,12 +16,10 @@ function SignIn() {
                   <i className="fas fa-book-open fa-2x mb-3" />
                   <h1 className="">Log in</h1>
                 </div>
-
                 <Form.Group as={Col} controlId="formGridEmail" className="mb-3">
                   <Form.Label>Email</Form.Label>
                   <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
-
                 <Form.Group
                   as={Col}
                   controlId="formGridPassword"
@@ -30,7 +28,6 @@ function SignIn() {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-
                 <Form.Group
                   as={Col}
                   controlId="formGridPassword"
@@ -43,7 +40,13 @@ function SignIn() {
                     </Nav.Link>
                   </LinkContainer>
                 </Form.Group>
-
+                <Form.Group as={Col} className="mb-3">
+                  <LinkContainer to="/password">
+                    <Navbar.Text className={classes.textForgetPassword}>
+                      Forgot password
+                    </Navbar.Text>
+                  </LinkContainer>
+                </Form.Group>
                 <Button variant="dark" type="submit">
                   Submit
                 </Button>

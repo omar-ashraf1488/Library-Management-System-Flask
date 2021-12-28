@@ -5,19 +5,21 @@ import MainNavbar from "./components/navbar/MainNavbar";
 import Home from "./components/pages/Home";
 import Books from "./components/pages/Books";
 
-import "./App.css";
+import classes from "./App.module.css";
 
 const App = () => {
   return (
     <Fragment>
       <MainNavbar />
-      <Routes>
-        <Route index exact element={<Home />} />
-        <Route path="books" element={<Books />}>
-          <Route path=":bookId" />
-          <Route path="new" />
-        </Route>
-      </Routes>
+      <div className={classes.app}>
+        <Routes>
+          <Route index exact element={<Home />} />
+          <Route path="books" element={<Books />}>
+            <Route path=":bookId" />
+            <Route path="new" />
+          </Route>
+        </Routes>
+      </div>
     </Fragment>
   );
 };
