@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
+import { Button } from "../Button";
+
 // import classes from "./Footer.module.css";
 import "./Footer.css";
 
@@ -63,7 +64,7 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="social-logo">
-              Library <i className="fas fa-book-open"></i>
+              Library <i className="ms-2 fas fa-book-open"></i>
             </Link>
           </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Button } from "./Button";
+import { Button } from "../Button";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
