@@ -35,6 +35,24 @@ This project is a Web application for Library Management System and It is connec
 
 ### <a name="prerequisites_"></a>Prerequisites
 
+<ul>
+  <li>npm List</li>
+  <ul>
+    <li>bootstrap@5.1.3</li>
+    <li>email-validator@2.0.4</li>
+    <li>formik@2.2.9</li>
+    <li>react-app@1.1.2</li>
+    <li>react-bootstrap@2.0.4</li>
+    <li>react-dom@17.0.2</li>
+    <li>react-router-bootstrap@0.26.0</li>
+    <li>react-router-dom@6.1.1</li>
+    <li>react-scripts@4.0.3</li>
+    <li>react@17.0.2</li>
+    <li>web-vitals@1.1.2</li>
+    <li>yup@0.32.11</li>
+  </ul>
+</ul>
+
 ### <a name="installation_"></a>Installation
 
 ## <a name="roadmap_"></a>Roadmap
