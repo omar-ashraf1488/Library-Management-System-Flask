@@ -1,9 +1,9 @@
 import React from 'react'
 import { Fragment } from 'react'
 
-import CarouselCustom from '../CarouselCustom'
-import Cards from '../Cards';
-import Footer from '../Footer';
+import CarouselCustom from '../Carousel/CarouselCustom'
+import Cards from '../Cards/Cards';
+import Footer from '../Footer/Footer';
 
 
 
