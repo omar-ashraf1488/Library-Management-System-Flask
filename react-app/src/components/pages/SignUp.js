@@ -16,6 +16,7 @@ const SignUp = () => (
     }}
     validationSchema={yup.object().shape({
       firstName: yup.string().required("Required"),
+      lastName: yup.string().required("Required"),
       email: yup.string().email().required("Email is required!"),
       password: yup
         .string()
@@ -112,6 +113,12 @@ const SignUp = () => (
                     className={
                       errors.password && touched.password ? classes.error : null
                     }
+                    className={
+                      values.password != "" &&
+                      values.password == values.passwordConfirmation
+                        ? classes.right
+                        : null
+                    }
                   />
                   {errors.password && touched.password && (
                     <span className={classes.inputFeedback}>
@@ -133,7 +140,16 @@ const SignUp = () => (
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
-                      errors.passwordConfirmation && touched.passwordConfirmation ? classes.error : null
+                      errors.passwordConfirmation &&
+                      touched.passwordConfirmation
+                        ? classes.error
+                        : null
+                    }
+                    className={
+                      values.password != "" &&
+                      values.password == values.passwordConfirmation
+                        ? classes.right
+                        : null
                     }
                   />
                   {errors.passwordConfirmation &&
@@ -150,10 +166,6 @@ const SignUp = () => (
             </Card.Body>
           </Card>
         </div>
-        <script>
-          func ()
-          {console.log(values)}
-        </script>
       </section>
     )}
   </Formik>
