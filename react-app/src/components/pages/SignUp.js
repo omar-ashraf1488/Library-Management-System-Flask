@@ -7,26 +7,32 @@ import classes from "./SignUp.module.css";
 
 const SignUp = () => (
   <Formik
-    initialValues={{ email: "", password: "" }}
-
+    initialValues={{
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      passwordConfirmation: "",
+    }}
+    validationSchema={yup.object().shape({
+      firstName: yup.string().required("Required"),
+      email: yup.string().email().required("Email is required!"),
+      password: yup
+        .string()
+        .required("Password is required!")
+        .min(8, "Password is too short - should be 8 characters minimum!")
+        .matches(/(?=.*[0-9])/, "Password must contain a number!"),
+      passwordConfirmation: yup
+        .string()
+        .required("Confirm Password is required!")
+        .oneOf([yup.ref("password"), null], "Passwords must match"),
+    })}
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
       }, 400);
     }}
-
-    schema={yup.object().shape({
-      firstName: yup.string()
-        .required("Required"),
-      email: yup.string()
-        .email()
-        .required("Required"),
-      password: yup.string()
-        .required("Required")
-        .min(8, "Password is too short - should be 8 characters minimum")
-        .matches(/(?=.*[0-9])/, "Password must contain a number"),
-    })}
   >
     {({
       values,
@@ -51,7 +57,7 @@ const SignUp = () => (
                   <Form.Group as={Col} controlId="formFirstName">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
-                      required
+                      name="firstName"
                       type="text"
                       placeholder="John"
                       value={values.firstName}
@@ -62,7 +68,7 @@ const SignUp = () => (
                   <Form.Group as={Col} controlId="formLastName">
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control
-                      required
+                      name="lastName"
                       placeholder="Doe"
                       type="text"
                       value={values.lastName}
@@ -80,10 +86,14 @@ const SignUp = () => (
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={errors.email && touched.email && "error"}
+                    className={
+                      errors.email && touched.email ? classes.error : null
+                    }
                   />
                   {errors.email && touched.email && (
-                    <div className={classes.inputFeedback}>{errors.email}</div>
+                    <span className={classes.inputFeedback}>
+                      {errors.email}
+                    </span>
                   )}
                 </Form.Group>
                 <Form.Group
@@ -96,16 +106,17 @@ const SignUp = () => (
                     name="password"
                     type="password"
                     placeholder="Password"
-                    required
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={errors.password && touched.password && "error"}
+                    className={
+                      errors.password && touched.password ? classes.error : null
+                    }
                   />
                   {errors.password && touched.password && (
-                    <div className={classes.inputFeedback}>
+                    <span className={classes.inputFeedback}>
                       {errors.password}
-                    </div>
+                    </span>
                   )}
                 </Form.Group>
                 <Form.Group
@@ -115,9 +126,22 @@ const SignUp = () => (
                 >
                   <Form.Label>Confirm Password</Form.Label>
                   <Form.Control
+                    name="passwordConfirmation"
                     type="password"
-                    placeholder="Confirm Password"
+                    placeholder="Password"
+                    value={values.passwordConfirmation}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.passwordConfirmation && touched.passwordConfirmation ? classes.error : null
+                    }
                   />
+                  {errors.passwordConfirmation &&
+                    touched.passwordConfirmation && (
+                      <span className={classes.inputFeedback}>
+                        {errors.passwordConfirmation}
+                      </span>
+                    )}
                 </Form.Group>
                 <Button variant="dark" type="submit" disabled={isSubmitting}>
                   Submit
@@ -126,6 +150,10 @@ const SignUp = () => (
             </Card.Body>
           </Card>
         </div>
+        <script>
+          func ()
+          {console.log(values)}
+        </script>
       </section>
     )}
   </Formik>
