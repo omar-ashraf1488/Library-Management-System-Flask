@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Form, Col, Row, Button, Card } from "react-bootstrap";
 import { Formik } from "formik";
 import * as yup from "yup";
 
 import classes from "./SignUp.module.css";
 
-const SignUp = () => (
+const SignUp = () => {
+
+  useEffect(() => {
+    fetch('/api').then(response => {
+      if(response.ok) {
+        return response.json()
+      }
+    }).then(data => console.log(data))
+  },[])
+
+  const handleFromatSubmit = () => {
+    fetch('/api')
+  }
+  return (
   <Formik
     initialValues={{
       firstName: "",
@@ -114,8 +127,8 @@ const SignUp = () => (
                       errors.password && touched.password ? classes.error : null
                     }
                     className={
-                      values.password != "" &&
-                      values.password == values.passwordConfirmation
+                      values.password !== "" &&
+                      values.password === values.passwordConfirmation
                         ? classes.right
                         : null
                     }
@@ -146,8 +159,8 @@ const SignUp = () => (
                         : null
                     }
                     className={
-                      values.password != "" &&
-                      values.password == values.passwordConfirmation
+                      values.password !== "" &&
+                      values.password === values.passwordConfirmation
                         ? classes.right
                         : null
                     }
@@ -169,6 +182,6 @@ const SignUp = () => (
       </section>
     )}
   </Formik>
-);
+  )};
 
 export default SignUp;
