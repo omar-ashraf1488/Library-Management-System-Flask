@@ -6,6 +6,7 @@ import * as yup from "yup";
 import classes from "./SignUp.module.css";
 
 const SignUp = () => {
+  const [formErrors, setErrors] = useState("");
 
   useEffect(() => {
     fetch('/api').then(response => {
@@ -40,16 +41,14 @@ const SignUp = () => {
     })}
 
     onSubmit={(values, { setSubmitting }) => {
-      
-        fetch('/api', {
-          method:'POST',
-          body: JSON.stringify(values)
-        }).then(response => response.json())
-        .then(message => console.log(message))
+      fetch('/api', {
+        method:'POST',
+        body: JSON.stringify(values)
+      }).then(response => response.json())
+      .then(message => console.log(message))
 
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-     
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
     }}
   >
     {({
@@ -60,8 +59,14 @@ const SignUp = () => {
       handleBlur,
       handleSubmit,
       isSubmitting,
-    }) => (
-      <section className={classes.signUpSection}>
+    }) => {
+      if (errors.password && touched.password) {
+        setErrors(classes.error)
+      }
+      if (values.password !== "" && values.password === values.passwordConfirmation) {
+        setErrors(classes.right)
+      }
+      return (<section className={classes.signUpSection}>
         <div className={classes.formContainer}>
           <Card className="shadow p-3 mb-5 bg-white rounded">
             <Card.Body>
@@ -126,15 +131,7 @@ const SignUp = () => {
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={
-                      errors.password && touched.password ? classes.error : null
-                    }
-                    className={
-                      values.password !== "" &&
-                      values.password === values.passwordConfirmation
-                        ? classes.right
-                        : null
-                    }
+                    className={formErrors}
                   />
                   {errors.password && touched.password && (
                     <span className={classes.inputFeedback}>
@@ -155,18 +152,7 @@ const SignUp = () => {
                     value={values.passwordConfirmation}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={
-                      errors.passwordConfirmation &&
-                      touched.passwordConfirmation
-                        ? classes.error
-                        : null
-                    }
-                    className={
-                      values.password !== "" &&
-                      values.password === values.passwordConfirmation
-                        ? classes.right
-                        : null
-                    }
+                    className={formErrors}
                   />
                   {errors.passwordConfirmation &&
                     touched.passwordConfirmation && (
@@ -183,7 +169,7 @@ const SignUp = () => {
           </Card>
         </div>
       </section>
-    )}
+    )}}
   </Formik>
   )};
 
