@@ -14,10 +14,7 @@ const SignUp = () => {
       }
     }).then(data => console.log(data))
   },[])
-
-  const handleFromatSubmit = () => {
-    fetch('/api')
-  }
+  
   return (
   <Formik
     initialValues={{
@@ -41,11 +38,18 @@ const SignUp = () => {
         .required("Confirm Password is required!")
         .oneOf([yup.ref("password"), null], "Passwords must match"),
     })}
+
     onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
+      
+        fetch('/api', {
+          method:'POST',
+          body: JSON.stringify(values)
+        }).then(response => response.json())
+        .then(message => console.log(message))
+
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
-      }, 400);
+     
     }}
   >
     {({
@@ -56,7 +60,6 @@ const SignUp = () => {
       handleBlur,
       handleSubmit,
       isSubmitting,
-      /* and other goodies */
     }) => (
       <section className={classes.signUpSection}>
         <div className={classes.formContainer}>
