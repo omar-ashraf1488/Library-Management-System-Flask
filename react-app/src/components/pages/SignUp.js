@@ -33,9 +33,12 @@ const SignUp = () => {
     })}
 
     onSubmit={(values, { setSubmitting }) => {
-      fetch('/user/add', {
+      let modifiedValues = values;
+      delete modifiedValues.passwordConfirmation;
+      
+      fetch('/api/v1/user/register', {
         method:'POST',
-        body: JSON.stringify(values)
+        body: JSON.stringify(modifiedValues)
       }).then(response => response.json())
       .then(message => console.log(message))
 
