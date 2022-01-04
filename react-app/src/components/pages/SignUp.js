@@ -7,14 +7,6 @@ import classes from "./SignUp.module.css";
 
 const SignUp = () => {
   const [formErrors, setErrors] = useState("");
-
-  useEffect(() => {
-    fetch('/api').then(response => {
-      if(response.ok) {
-        return response.json()
-      }
-    }).then(data => console.log(data))
-  },[])
   
   return (
   <Formik
@@ -41,7 +33,7 @@ const SignUp = () => {
     })}
 
     onSubmit={(values, { setSubmitting }) => {
-      fetch('/api', {
+      fetch('/user/add', {
         method:'POST',
         body: JSON.stringify(values)
       }).then(response => response.json())
