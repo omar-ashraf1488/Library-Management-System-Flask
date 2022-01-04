@@ -27,7 +27,8 @@ This project is a Web application for Library Management System and It is connec
 * Python 3
 * Flask
 * ReactJS
-* SQL
+* Microsoft SQL Server
+* SQLAlchemy
 * React-Bootstrap 5
 * IDE: Visual Studio Code
 
