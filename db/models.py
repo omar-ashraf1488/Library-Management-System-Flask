@@ -1,3 +1,4 @@
+from enum import unique
 from flask_sqlalchemy import SQLAlchemy
 from uuid import uuid4
 from datetime import datetime
@@ -11,7 +12,7 @@ def get_uuid():
 # Creat a Model to add user
 class User(db.Model):
     __tablename__ = "users"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
     firstName = db.Column(db.String(80), nullable=False)
     lastName = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
