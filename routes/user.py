@@ -1,8 +1,10 @@
 from __main__ import app
 from flask import make_response, request, json, jsonify
 from flask_bcrypt import Bcrypt
+from pprint import pprint
 
 from db.models import db, User
+from db.schema.userSchema import UserSchema
 
 bcrypt = Bcrypt(app)
 
@@ -25,9 +27,11 @@ def register_user():
     try:
         new_user = User(firstName=request_data['firstName'], lastName=request_data['lastName'],
                         email=request_data['email'], password=hashed_password)
+        schema = UserSchema()
         db.session.add(new_user)
         db.session.commit()
-        return make_response(jsonify({"data": request_data}), 200)
+        result = schema.dump(new_user)
+        return make_response(jsonify({"data": result}), 200)
     except Exception as e:
         return make_response(jsonify({"msg": e}), 500)
 

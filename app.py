@@ -1,11 +1,12 @@
 from flask import Flask
 from config import ApplicationConfig
-from db.models import db
+from db.models import db, ma
 
 app = Flask(__name__)
 app.config.from_object(ApplicationConfig)
 
 db.init_app(app)
+ma.init_app(app)
 
 with app.app_context():
     db.create_all()
