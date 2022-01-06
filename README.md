@@ -85,6 +85,7 @@ This project is a Web application for Library Management System and It is connec
 - [x] Home Page, Sign Up Page, Sign In Page
 - [x] Validation Email and Password using Formik and Yup
 - [x] Authenticate user 
+- [ ] Token Authentication
 - [ ] Two Language: English and German
 - [ ] Add User and User Admin
 - [ ] Add books with their details, delete, borrow, buy, return books
