@@ -1,10 +1,13 @@
 from __main__ import app
 from flask import make_response, request, json, jsonify
 from flask_bcrypt import Bcrypt
-from pprint import pprint
+import jwt
+import datetime
 
 from db.models import db, User
 from db.schema.userSchema import UserSchema
+from config import ApplicationConfig
+from decorators.auth import token_required
 
 bcrypt = Bcrypt(app)
 
@@ -47,6 +50,18 @@ def login_user():
     if user is None:
         return make_response(jsonify({"msg": "Unauthorized"}), 401)
     if not bcrypt.check_password_hash(user.password, password):
-        return make_response(jsonify({"msg": "Unauthorized password"}), 401)
+        return make_response(jsonify({"msg": "Unauthorized user"}), 401)
+    
+    token = jwt.encode({'id': user.id, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)}, ApplicationConfig.SECRET_KEY, algorithms="HS256")
 
-    return make_response(jsonify({"id": user.id, "email": user.email}), 500)
+    return make_response(jsonify({"msg": "Logged in successfully.", "token": token}), 200)
+
+@app.route('/api/v1/user/profile', methods=['GET'])
+@token_required
+def profile(current_user):
+    try:
+        schema = UserSchema()
+        result = schema.dump(current_user)
+        return make_response(jsonify({"data": result}), 200)
+    except Exception as e:
+        return make_response(jsonify({"msg": e}), 500)
