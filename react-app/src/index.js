@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import SignUp from "./components/pages/SignUp";
 import SignIn from "./components/pages/SignIn";
+import Books from './components/pages/BooksPage/Books';
 
 import {
   BrowserRouter,
@@ -14,12 +15,14 @@ import {
 
 import reportWebVitals from './reportWebVitals';
 
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/books" element={<Books />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

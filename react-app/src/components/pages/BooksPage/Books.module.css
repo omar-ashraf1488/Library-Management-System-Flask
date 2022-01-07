@@ -1,0 +1,16 @@
+.bookSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookContainer{
+    width: 80%;
+}
+    
+.line {
+    width: 90%;
+    height: 10px;
+    border-bottom: 1px solid rgba(138, 136, 136, 0.993);
+    opacity: .2;
+    position: relative;
+}

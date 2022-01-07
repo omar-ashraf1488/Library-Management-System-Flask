@@ -61,7 +61,8 @@ const SignUp = () => {
       if (values.password !== "" && values.password === values.passwordConfirmation) {
         setErrors(classes.right)
       }
-      return (<section className={classes.signUpSection}>
+      return (
+      <section className={classes.signUpSection}>
         <div className={classes.formContainer}>
           <Card className="shadow p-3 mb-5 bg-white rounded">
             <Card.Body>
