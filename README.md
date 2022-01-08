@@ -30,6 +30,7 @@ This project is a Web application for Library Management System and It is connec
 * Microsoft SQL Server
 * SQLAlchemy
 * React-Bootstrap 5
+* Postman
 * IDE: Visual Studio Code
 
 ## <a name="getting_started"></a>Getting Started
