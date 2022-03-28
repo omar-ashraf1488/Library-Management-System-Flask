@@ -16,6 +16,7 @@
 
 ## <a name="about_the_project"></a>About The Project
 This project is a Web application for Library Management System and It is connected to Database. The main aim of the project is learning Python, Flask, ReactJS and SQL.
+This repository is also still under development because I am still learning. I hope to continue to improve my skills and add more features to this repository as I learn more.
 
 <p align="center">
   <img width="700" <img src="current app/app30.12.gif"/>
